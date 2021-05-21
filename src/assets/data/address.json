@@ -1,0 +1,36 @@
+{
+    "Address": [
+      {
+        "id": 101,
+        "city":"Dallas",
+        "state": "TX",
+        "zip": 76039
+      },
+      {
+        "id": 102,
+        "city":"Euless",
+        "state": "TX",
+        "zip": 76040
+      },
+      {
+        "id": 103,
+        "city":"Bedford",
+        "state": "TX",
+        "zip": 76055
+      },
+      {
+        "id": 104,
+        "city":"Irving",
+        "state": "TX",
+        "zip": 76032
+      },
+     
+      {
+        "id": 105,
+        "city":"Arlington",
+        "state": "TX",
+        "zip": 76074
+      }
+      
+    ]
+  }

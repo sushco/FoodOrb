@@ -1,0 +1,135 @@
+<div class='container mt-1'>
+    <h2 class='row mb-3 bg-dark bg-dark text-white  pt-2 pb-2 '>Welcome to FoodOrb!</h2>
+    <div class='row mb-5'>
+        <div class='col-8 bg-dark'>
+            <h3 style="color: azure;">Food Menu
+                <div class="search-container">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search.." name="search" [(ngModel)]="filtertext">
+                      <button type="submit" style="display: none;"><i class="fa fa-search"></i></button>
+                    </form>
+                  </div></h3>
+
+
+            <div class='row mt-5'>
+                <div
+                    class="col-sm-12 col-md-6 col-lg-3"
+                    *ngFor='let item of allItems | searchfilter:{ foodName : filtertext} '>
+                    <div class="card">
+                        <img class="card-img-top"
+                            [src]="item.foodImageUrl"
+                            alt="image"
+                            width="100"
+                            height="100"/>
+
+                        <div class="card-body">
+                            <div class="row d-flex justify-content-between">
+                                <div class="">{{ item.foodName }}</div>
+                                <div class="">$ {{ item.foodCost }} </div>
+                            </div>
+                            <div class="mt-1 row d-flex flex-row justify-content-between">
+                                <div class="small text-muted">
+                                   {{ item.foodDescription }}
+                                </div>
+                                <div class="small">
+                                    <button
+                                        type='button' data-toggle="modal" data-target="#myModal1"
+                                        class="btn btn-danger btn-sm mt-2" [disabled]= "!emailId"
+                                        (click)='addToCart(item)'>
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='col-4 bg-dark text-secondary p-5'>
+            <h4 style="color: azure;">Cart</h4>
+            <div *ngIf='cartItems.length==0; else cartList'>
+                <h6>Cart is Empty!!</h6>
+                <div *ngIf="!emailId">
+                    <h4 style="color: darkseagreen;">Please log in/register to place order.</h4>
+                </div>
+            </div>
+            <ng-template #cartList>
+                <div class='row m-2'>
+                    <div class='col-12'>
+                        <ul class="list-group"
+                            *ngFor="let cart of cartItems">
+                            <li  class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="mb-0">{{ cart.foodName}}</h4>
+                                    <p class="mb-0">$ {{ cart.foodCost }}.00</p>
+                                    <button type="button"
+                                            class="btn btn-link text-secondary float-right"
+                                            (click)="removeFromCart(cart.id)">
+                                        <i class="material-icons">delete_forever</i>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <h3 class="mb-0">Total</h3>
+                                <p class="font-20 mb-0">$ {{ total }}.00</p>
+                                <br>
+                                <p>  </p>
+                            </li>
+                            <br>
+                            <button class="btn btn-primary btn-success" (click)='startTimer(); clickEvent()'>Place order</button>
+                            <h6>{{msg}}</h6>
+
+                            <button *ngIf="isTrackOrder" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="TrackEvent()">
+                              Track order
+                            </button>
+                        </ul>
+                    </div>
+                </div>
+            <!--</div>-->
+            </ng-template>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Order Details
+            <h2>Your order placed successfully</h2></h4>
+
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <h4>Status:</h4>
+            <h4>Placed</h4>
+            <h2>{{Message}}</h2>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+        </div>
+
+      </div>      
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,19 @@
+[
+    {
+      "id": 101,
+      "email": "johndoe@gmail.com",
+      "password": "123456",
+      "pwconfirm": "123456"
+      
+    },
+    {
+        "id": 102,
+        "email": "samanthabee@gmail.com",
+        "password": "123456",
+        "pwconfirm": "123456"
+        
+      }
+    
+   
+    
+  ]

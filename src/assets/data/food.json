@@ -1,0 +1,46 @@
+ [
+      {
+        "id": 101,
+        "foodImageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+        "foodName": "Momo",
+        "foodCost": 8,
+        "foodDescription": "Nepalese-Tibetan Dumplings"
+      },
+      {
+        "id": 102,
+        "foodImageUrl": "https://images.unsplash.com/photo-1585503913867-f3382c5d1122?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80",
+        "foodName": "Chowmein",
+        "foodCost": 10,
+        "foodDescription": "Soft stir fried noodles"
+      },
+      {
+        "id": 103,
+        "foodImageUrl": "https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+        "foodName": "Biryani",
+        "foodCost": 9,
+        "foodDescription": "Indo-Pak delicacy"
+      },
+      {
+        "id": 104,
+        "foodImageUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
+        "foodName": "Chicken Tikka Masala",
+        "foodCost": 10,
+        "foodDescription": "A British delicacy with Indian roots"
+      },
+      {
+        "id": 105,
+        "foodImageUrl": "https://images.unsplash.com/photo-1600891964532-839fb6407dd1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        "foodName": "Chicken Wings",
+        "foodCost": 10,
+        "foodDescription": "Classic bone-in Chicken wings w/ Celery"
+      },
+      {
+        "id": 106,
+        "foodImageUrl": "https://images.unsplash.com/photo-1614514710295-129a2e3bbf24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
+        "foodName": "Falafel",
+        "foodCost": 6,
+        "foodDescription": "Mediterranian side made w/ chickpeas"
+      }
+      
+    ]
+  

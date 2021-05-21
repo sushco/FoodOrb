@@ -1,0 +1,43 @@
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <span class="anchor" id="formLogin"></span>
+
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <h3 class="mb-0">List of Addresses on file</h3>
+                </div>
+                <div class="card-body">                  
+                        <div>
+                            <button (click)="AddAddress()">Add new address</button>
+                        </div>
+                        <div *ngIf="isAddress">
+                            <h3>Add an Address</h3>
+                            <label for="Name">Name</label>
+                            <input type="text" class="form-control" [(ngModel)]="name"><br />
+                            <label for="Address">Address</label>
+                            <input type="text" class="form-control" [(ngModel)]="address"><br />
+                            <button (click)="newAddress()" class="btn btn-primary">Add address</button>
+                        </div>
+
+                        <div class='row m-2' *ngIf='addressList.length !== 0'>
+                            <h4 style="color: azure;">Address</h4>
+                            <div class='col-12'>
+                                <ul class="list-group" *ngFor="let address of addressList">
+                                    <li class="list-group-item">
+                                        <div>
+                                            <label for="Name">Name : </label>   {{ address.name}}<br />
+                                            <label for="Address">Address : </label> {{ address.address }}
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>                   
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

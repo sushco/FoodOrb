@@ -1,0 +1,72 @@
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <span class="anchor" id="formLogin"></span>
+
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <h3 class="mb-0">Card Details</h3>
+                </div>
+                <div class="card-body">
+
+                    <div>
+                        <button (click)="AddCard()">Add new card</button>
+                    </div>
+                    <form #myForm="ngForm">
+                        <div *ngIf="isCard">
+                         
+                                <h3>Add card</h3>
+                                <label for="Name">Card Name</label>
+                                <input type="text" class="form-control" name="cardName"  [(ngModel)]="cardName" #name="ngModel"
+                                    [ngClass]="{ 'is-invalid': myForm.submitted && cardName.invalid }" required><br />
+                                  
+                                <div *ngIf="(cardName.touched || myForm.submitted) && cardName.invalid" class="invalid-feedback">
+                                    <div *ngIf="cardName.errors?.required">CardName is required</div>
+                                    
+                                </div>                     
+                          
+                            <label for="cardNo">Card No</label>
+                            <input type="number" class="form-control" name="cardNo" [(ngModel)]="cardNo" #name="ngModel"
+                            [ngClass]="{ 'is-invalid': myForm.submitted && cardNo.invalid }" required><br />
+                            <div *ngIf="(cardNo.touched || myForm.submitted) && cardNo.invalid" class="invalid-feedback">
+                                <div *ngIf="cardNo.errors?.required">cardNo is required</div>
+                            </div> 
+                           
+                            <label for="expiryMonth">Expiry Month</label>
+                            <select  name="expiryMonth" [(ngModel)]="expiryMonth" class="form-control"  #name="ngModel">
+                                <option *ngFor="let month of monthsDropdown">
+                                    {{month.Description}}
+                                </option>
+                            </select>
+                            
+                            <label for="expiryYear">Expiry Year</label>
+                            <select  name="expiryYear" [(ngModel)]="expiryYear" class="form-control"  #name="ngModel">
+                                <option *ngFor="let year of yearsDropdown">
+                                    {{year.Year}}
+                                </option>
+                            </select>
+                            <br />
+                            <button (click)="newCard()" class="btn btn-primary">Add card</button>
+                        </div>
+                    </form>
+                    <div class='row m-2' *ngIf='cardList.length !== 0'>
+                        <h4 style="color: azure;">Address</h4>
+                        <div class='col-12'>
+                            <ul class="list-group" *ngFor="let card of cardList">
+                                <li class="list-group-item">
+                                    <div>
+                                        <label for="Name">Card Name : </label> {{ card.cardName}}<br />
+                                        <label for="cardNo">Card No : </label> {{ card.cardNo}}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
